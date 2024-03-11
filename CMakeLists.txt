@@ -83,7 +83,7 @@ target_link_libraries(DataLoadCAN
     ${PJ_LIBRARIES}
     CanFrameProcessor
 )
-install(TARGETS DataLoadCAN DESTINATION bin)
+install(TARGETS DataLoadCAN DESTINATION lib/plotjuggler)
 
 # Build&Install DataStreamCAN only if SerialBus found.
 if(${Qt5SerialBus_FOUND})
@@ -98,7 +98,7 @@ if(${Qt5SerialBus_FOUND})
         CanFrameProcessor
         Qt5::SerialBus
     )
-    install(TARGETS DataStreamCAN DESTINATION bin)
+    install(TARGETS DataStreamCAN DESTINATION lib/plotjuggler)
 else()
     message("-- Since Qt5::SerialBus not found, cannot build DataStreamCAN.")
 endif()
